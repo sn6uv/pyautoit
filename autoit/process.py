@@ -165,3 +165,29 @@ def shutdown(code):
     """
     ret = AUTO_IT.AU3_Shutdown(INT(code))
     return ret
+
+
+@api.check(1, "set environment variable failed")
+def env_set(variable, value=None):
+    """
+
+    :param variable:
+    :param value:
+    :return:
+    """
+    if value is None:
+        ret = AUTO_IT.AU3_EnvSet(LPCWSTR(variable))
+    else:
+        ret = AUTO_IT.AU3_EnvSet(LPCWSTR(variable), LPCWSTR(value))
+    return ret
+
+
+@api.check(1, "get environment variable failed")
+def env_get(variable):
+    """
+
+    :param variable:
+    :return:
+    """
+    ret = AUTO_IT.AU3_EnvGet(LPCWSTR(variable))
+    return ret

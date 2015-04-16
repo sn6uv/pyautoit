@@ -39,6 +39,8 @@ from .process import process_wait_close
 from .process import run_as
 from .process import run_as_wait
 from .process import shutdown
+from .process import env_set
+from .process import env_get
 
 from .win import win_activate
 from .win import win_activate_by_handle
